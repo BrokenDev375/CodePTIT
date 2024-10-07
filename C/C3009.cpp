@@ -1,0 +1,39 @@
+#include<stdio.h>
+#include<math.h>
+int shh(int n){
+	int s=1;
+	if(n==1){
+		return 0 ;
+	}
+	for(int i=2;i<=sqrt(n);++i){
+		if(n%i==0){
+			s+=i;
+		if(i!=sqrt(n)){
+			s+=n/i;
+		}
+		}
+	}
+	if(n==s){
+		return 1;
+	}
+	return 0 ;
+}
+int main(){
+	int a , b , i ;
+	scanf("%d %d",&a , &b);
+	if(a<=b){
+	for(i=a;i<=b;++i){
+		if(shh(i)==1){
+			printf("%d ",i);
+		}
+	}
+}
+else{	
+for(i=b;i<=a;++i){
+		if(shh(i)==1){
+			printf("%d ",i);
+		}
+	}
+	
+}
+}
